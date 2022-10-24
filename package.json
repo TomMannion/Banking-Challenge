@@ -1,0 +1,23 @@
+{
+  "name": "javascript-solo-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomMannion/Banking-Challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomMannion/Banking-Challenge/issues"
+  },
+  "homepage": "https://github.com/TomMannion/Banking-Challenge#readme",
+  "devDependencies": {
+    "jest": "^29.2.1"
+  }
+}
