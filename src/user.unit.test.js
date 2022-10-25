@@ -5,6 +5,13 @@ describe("User", () => {
   it("should be an instance of User", () => {
     expect(user).toBeInstanceOf(User);
   });
+  it("should have a account id property", () => {
+    expect(user.accountId).toBe(0);
+  });
+  it("should set an id", () => {
+    user.accountId = 1;
+    expect(user.accountId).toBe(1);
+  });
   it("should have a firstName property", () => {
     expect(user.firstName).toBe("John");
   });
@@ -22,12 +29,5 @@ describe("User", () => {
   });
   it("should contain an accounts hash", () => {
     expect(user.accountKeys).toEqual({});
-  });
-  it("should have a method to add an account", () => {
-    expect(user.addAccount).toBeInstanceOf(Function);
-  });
-  it("should add an account to the accounts hash", () => {
-    user.addAccount("debit", "12345");
-    expect(user.accountKeys).toEqual({ debit: "12345" });
   });
 });
