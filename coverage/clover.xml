@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1666703771090" clover="3.2.0">
-  <project timestamp="1666703771090" name="All files">
+<coverage generated="1666704123126" clover="3.2.0">
+  <project timestamp="1666704123126" name="All files">
     <metrics statements="54" coveredstatements="54" conditionals="12" coveredconditionals="12" methods="14" coveredmethods="14" elements="80" coveredelements="80" complexity="0" loc="54" ncloc="54" packages="1" files="6" classes="6"/>
     <file name="account.js" path="/Users/thomasmannion/Projects/Javascript-Solo-Project/src/account.js">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>

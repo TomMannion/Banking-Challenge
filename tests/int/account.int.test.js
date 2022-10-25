@@ -16,18 +16,18 @@ describe("Account", () => {
     expect(account.balance).toBe(100);
   });
   it("should make a withdrawal", () => {
-    const transaction = new Transaction("withdrawal", 50);
+    const transaction = new Transaction("withdrawal", 50.25);
     transactionLayer.makeTransaction(account, transaction);
     transaction.setBalance(account.balance);
     account.addTransaction(transaction);
-    expect(account.balance).toBe(50);
+    expect(account.balance).toBe(49.75);
   });
   it("should not make a withdrawal if there are insufficient funds", () => {
-    const transaction = new Transaction("withdrawal", 100);
+    const transaction = new Transaction("withdrawal", 100.0);
     transactionLayer.makeTransaction(account, transaction);
     transaction.setBalance(account.balance);
     account.addTransaction(transaction);
-    expect(account.balance).toBe(50);
+    expect(account.balance).toBe(49.75);
     expect(transaction.error).toEqual(new Error("Insufficient funds"));
   });
   it("should have a transaction history", () => {
