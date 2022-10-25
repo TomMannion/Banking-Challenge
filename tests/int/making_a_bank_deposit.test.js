@@ -24,6 +24,8 @@ describe("Bank", () => {
     const transaction = new Transaction("deposit", 100);
     let currentAccount = bank.findAccount(1);
     transactionLayer.makeTransaction(currentAccount, transaction);
+    transaction.setBalance(currentAccount.balance);
+    account.addTransaction(transaction);
     bank.updateAccount(currentAccount);
     expect(bank.accounts[1].balance).toEqual(200);
   });
@@ -31,6 +33,8 @@ describe("Bank", () => {
     const transaction = new Transaction("withdrawal", 100);
     let currentAccount = bank.findAccount(1);
     transactionLayer.makeTransaction(currentAccount, transaction);
+    transaction.setBalance(currentAccount.balance);
+    account.addTransaction(transaction);
     bank.updateAccount(currentAccount);
     expect(bank.accounts[1].balance).toEqual(100);
   });
@@ -38,11 +42,22 @@ describe("Bank", () => {
     const transaction = new Transaction("withdrawal", 101);
     let currentAccount = bank.findAccount(1);
     transactionLayer.makeTransaction(currentAccount, transaction);
+    transaction.setBalance(currentAccount.balance);
+    account.addTransaction(transaction);
     bank.updateAccount(currentAccount);
     expect(bank.accounts[1].balance).toEqual(100);
     // test the 3rd transaction in the account's transaction history for the error
     expect(bank.findAccount(1).transactions[2].error).toEqual(
       new Error("Insufficient funds")
     );
+  });
+  it("should not change the balance if the transaction is invalid", () => {
+    const transaction = new Transaction("fake transaction", 100);
+    let currentAccount = bank.findAccount(1);
+    transactionLayer.makeTransaction(currentAccount, transaction);
+    transaction.setBalance(currentAccount.balance);
+    account.addTransaction(transaction);
+    bank.updateAccount(currentAccount);
+    expect(bank.accounts[1].balance).toEqual(100);
   });
 });

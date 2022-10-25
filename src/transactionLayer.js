@@ -1,18 +1,17 @@
 class TransactionLayer {
-  // Handle the transaction
+  // Handle the transaction logic
   makeTransaction(account, transaction) {
-    if (transaction.type === "deposit") {
-      this.#deposit(account, transaction.amount);
-    } else if (transaction.type === "withdrawal") {
-      try {
+    try {
+      if (transaction.type === "deposit") {
+        this.#deposit(account, transaction.amount);
+      } else if (transaction.type === "withdrawal") {
         this.#withdrawal(account, transaction.amount);
-      } catch (error) {
-        transaction.error = error;
+      } else {
+        this.#invalidTransactionType();
       }
+    } catch (error) {
+      transaction.error = error;
     }
-    // Set the current balance after the transaction as a record
-    transaction.balance = account.balance;
-    account.transactions.push(transaction);
     return account;
   }
   // Functions to be used in makeTransaction
@@ -25,6 +24,9 @@ class TransactionLayer {
     } else {
       account.balance -= amount;
     }
+  }
+  #invalidTransactionType() {
+    throw new Error("Invalid transaction type");
   }
 }
 

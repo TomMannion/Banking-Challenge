@@ -4,6 +4,9 @@ class Account {
     this.transactions = [];
     this.balance = balance;
   }
+  addTransaction(transaction) {
+    this.transactions.push(transaction);
+  }
 }
 
 module.exports = Account;

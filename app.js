@@ -25,10 +25,10 @@ let debitAccount = bank.findAccount(johnsAccount.accountKeys["debit"]);
 // initialize a transaction
 const transactionOne = new Transaction("deposit", 100);
 // make the transaction and reflect that in the account
-bank.updateAccount(
-  johnsAccount.accoundId,
-  transactionLayer.makeTransaction(debitAccount, transactionOne)
-);
+transactionLayer.makeTransaction(debitAccount, transactionOne);
+transactionOne.setBalance(debitAccount.balance);
+debitAccount.addTransaction(transactionOne);
+bank.updateAccount(johnsAccount.accoundId, debitAccount);
 
 if (debitAccount.balance === 200) {
   console.log("Test passed");
@@ -41,10 +41,10 @@ debitAccount = bank.findAccount(johnsAccount.accountKeys["debit"]);
 // initialize a transaction
 const transactionTwo = new Transaction("withdrawal", 100);
 // make the transaction and reflect that in the account
-bank.updateAccount(
-  johnsAccount.accoundId,
-  transactionLayer.makeTransaction(debitAccount, transactionTwo)
-);
+transactionLayer.makeTransaction(debitAccount, transactionTwo);
+transactionTwo.setBalance(debitAccount.balance);
+debitAccount.addTransaction(transactionTwo);
+bank.updateAccount(johnsAccount.accoundId, debitAccount);
 
 if (debitAccount.balance === 100) {
   console.log("Test passed");
@@ -57,10 +57,10 @@ debitAccount = bank.findAccount(johnsAccount.accountKeys["debit"]);
 // initialize a transaction
 const transactionThree = new Transaction("withdrawal", 201);
 // make the transaction and reflect that in the account
-bank.updateAccount(
-  johnsAccount.accoundId,
-  transactionLayer.makeTransaction(debitAccount, transactionThree)
-);
+transactionLayer.makeTransaction(debitAccount, transactionThree);
+transactionThree.setBalance(debitAccount.balance);
+debitAccount.addTransaction(transactionThree);
+bank.updateAccount(johnsAccount.accoundId, debitAccount);
 
 if (debitAccount.balance === 100) {
   console.log("Test passed");

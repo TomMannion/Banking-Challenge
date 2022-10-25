@@ -14,4 +14,12 @@ describe("Account", () => {
   it("should have a transaction property", () => {
     expect(account.transactions).toEqual([]);
   });
+  it("should have a method to add a transaction", () => {
+    expect(account.addTransaction).toBeInstanceOf(Function);
+  });
+  it("should add a transaction", () => {
+    const transaction = { type: "deposit", amount: 100 };
+    account.addTransaction(transaction);
+    expect(account.transactions).toEqual([transaction]);
+  });
 });

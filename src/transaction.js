@@ -6,6 +6,9 @@ class Transaction {
     this.amount = amount;
     this.balance = 0;
   }
+  setBalance(balance) {
+    this.balance = balance;
+  }
 }
 
 module.exports = Transaction;

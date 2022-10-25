@@ -23,4 +23,13 @@ describe("Transaction", () => {
     const transaction = new Transaction("add", 100);
     expect(transaction.balance).toBe(0);
   });
+  it("should have a setBalance method", () => {
+    const transaction = new Transaction("add", 100);
+    expect(transaction.setBalance).toBeInstanceOf(Function);
+  });
+  it("should set the balance", () => {
+    const transaction = new Transaction("add", 100);
+    transaction.setBalance(100);
+    expect(transaction.balance).toBe(100);
+  });
 });
