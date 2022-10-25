@@ -23,7 +23,7 @@ describe("Print", () => {
     };
     const print = new Print();
     expect(print.bankStatement(account)).toEqual(
-      `date || credit || debit || balance || success\n${account.transactions[0].date.toLocaleString()} || 100 ||  || 100 || true`
+      `date || credit || debit || balance || success\n${account.transactions[0].date.toLocaleString()} || 100.00 ||  || 100.00 || true`
     );
   });
   it("should print a bank statement with multiple transactions", () => {
@@ -48,7 +48,7 @@ describe("Print", () => {
     };
     const print = new Print();
     expect(print.bankStatement(account)).toEqual(
-      `date || credit || debit || balance || success\n${account.transactions[1].date.toLocaleString()} ||  || 50 || 50 || true\n${account.transactions[0].date.toLocaleString()} || 100 ||  || 100 || true`
+      `date || credit || debit || balance || success\n${account.transactions[1].date.toLocaleString()} ||  || 50.00 || 50.00 || true\n${account.transactions[0].date.toLocaleString()} || 100.00 ||  || 100.00 || true`
     );
   });
   it("should print a bank statement with multiple transactions and errors", () => {
@@ -80,7 +80,7 @@ describe("Print", () => {
     };
     const print = new Print();
     expect(print.bankStatement(account)).toEqual(
-      `date || credit || debit || balance || success\n${account.transactions[2].date.toLocaleString()} ||  || 100 || 50 || false\n${account.transactions[1].date.toLocaleString()} ||  || 50 || 50 || true\n${account.transactions[0].date.toLocaleString()} || 100 ||  || 100 || true`
+      `date || credit || debit || balance || success\n${account.transactions[2].date.toLocaleString()} ||  || 100.00 || 50.00 || false\n${account.transactions[1].date.toLocaleString()} ||  || 50.00 || 50.00 || true\n${account.transactions[0].date.toLocaleString()} || 100.00 ||  || 100.00 || true`
     );
   });
 });

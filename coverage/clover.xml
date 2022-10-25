@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1666704123126" clover="3.2.0">
-  <project timestamp="1666704123126" name="All files">
+<coverage generated="1666706110375" clover="3.2.0">
+  <project timestamp="1666706110375" name="All files">
     <metrics statements="54" coveredstatements="54" conditionals="12" coveredconditionals="12" methods="14" coveredmethods="14" elements="80" coveredelements="80" complexity="0" loc="54" ncloc="54" packages="1" files="6" classes="6"/>
     <file name="account.js" path="/Users/thomasmannion/Projects/Javascript-Solo-Project/src/account.js">
       <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
@@ -29,13 +29,13 @@
       <line num="3" count="3" type="stmt"/>
       <line num="4" count="3" type="stmt"/>
       <line num="5" count="6" type="stmt"/>
-      <line num="6" count="6" type="cond" truecount="2" falsecount="0"/>
       <line num="7" count="6" type="cond" truecount="2" falsecount="0"/>
-      <line num="8" count="6" type="stmt"/>
       <line num="9" count="6" type="cond" truecount="2" falsecount="0"/>
       <line num="10" count="6" type="stmt"/>
-      <line num="12" count="3" type="stmt"/>
-      <line num="16" count="1" type="stmt"/>
+      <line num="11" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="6" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
     </file>
     <file name="transaction.js" path="/Users/thomasmannion/Projects/Javascript-Solo-Project/src/transaction.js">
       <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
