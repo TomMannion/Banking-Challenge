@@ -74,7 +74,7 @@ If you'd like to run the project please follow the instructions below.
 
 My initial model structure
 
-![alt text](https://github.com/TomMannion/Banking-Challenge/tree/main/img/models.png?raw=true)
+![alt text](https://github.com/TomMannion/Banking-Challenge/blob/main/img/models.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -82,7 +82,7 @@ My initial model structure
 
 The design has 100% test coverage for unit and intergrated tested.
 
-![alt text](https://github.com/TomMannion/Banking-Challenge/tree/main/img/test-coverage.png?raw=true)
+![alt text](https://github.com/TomMannion/Banking-Challenge/blob/main/img/test-coverage.png)
 
 <!-- CONTACT -->
 
